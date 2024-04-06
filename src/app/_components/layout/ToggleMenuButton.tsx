@@ -2,7 +2,7 @@
 
 import { AiOutlineMenu } from '@react-icons/all-files/ai/AiOutlineMenu';
 import { useToggleMenu } from './ToggleMenuProvider';
-import styles from './styles.module.scss';
+import styles from './styles/nav.module.scss';
 
 const ToggleMenuButton = () => {
 	const { onToggleMenu } = useToggleMenu();

@@ -3,7 +3,7 @@ import ToggleMenuButton from '../ToggleMenuButton';
 import ToggleMenuProvider from '../ToggleMenuProvider';
 
 const meta = {
-	title: 'Home/ToggleMenuButton',
+	title: 'Layout/ToggleMenuButton',
 	component: ToggleMenuButton,
 } satisfies Meta<typeof ToggleMenuButton>;
 

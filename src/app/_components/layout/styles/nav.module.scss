@@ -1,3 +1,9 @@
+.leftContent {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
 .toggleButton {
 	padding: 8px;
 	width: 40px;
@@ -6,7 +12,6 @@
 	cursor: pointer;
 
 	&:focus-visible {
-		outline: none;
 		box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3);
 	}
 
@@ -21,5 +26,11 @@
 	svg {
 		font-size: 24px;
 		color: var(--text-color);
+	}
+}
+
+.logo {
+	img {
+		display: block;
 	}
 }
