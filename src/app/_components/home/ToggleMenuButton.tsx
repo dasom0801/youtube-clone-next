@@ -1,6 +1,6 @@
 'use client';
 
-import { IoMenuOutline } from '@react-icons/all-files/io5/IoMenuOutline';
+import { AiOutlineMenu } from '@react-icons/all-files/ai/AiOutlineMenu';
 import { useToggleMenu } from './ToggleMenuProvider';
 import styles from './styles.module.scss';
 
@@ -8,7 +8,7 @@ const ToggleMenuButton = () => {
 	const { onToggleMenu } = useToggleMenu();
 	return (
 		<button className={styles.toggleButton} onClick={onToggleMenu}>
-			<IoMenuOutline />
+			<AiOutlineMenu />
 		</button>
 	);
 };
