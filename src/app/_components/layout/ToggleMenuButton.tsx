@@ -1,14 +1,14 @@
 'use client';
 
-import { AiOutlineMenu } from '@react-icons/all-files/ai/AiOutlineMenu';
 import { useToggleMenu } from './ToggleMenuProvider';
 import styles from './styles/nav.module.scss';
+import Icon from '../common/Icon';
 
 const ToggleMenuButton = () => {
 	const { onToggleMenu } = useToggleMenu();
 	return (
 		<button className={styles.toggleButton} onClick={onToggleMenu}>
-			<AiOutlineMenu />
+			<Icon icon='menu' />
 		</button>
 	);
 };
