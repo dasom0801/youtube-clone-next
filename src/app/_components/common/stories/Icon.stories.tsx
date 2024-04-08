@@ -19,6 +19,7 @@ export const Fill: Story = {
 	args: {
 		icon: 'home',
 		type: 'fill',
+		color: '#c0c0c0',
 		size: '50px',
 	},
 };
