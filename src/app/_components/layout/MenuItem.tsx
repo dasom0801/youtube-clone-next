@@ -3,14 +3,14 @@ import clsx from 'clsx';
 import Icon from '../common/Icon';
 import styles from './styles/menuItem.module.scss';
 
-interface Props {
+export interface MenuItemProps {
 	icon: string;
 	path: string;
 	label: string;
 	active?: boolean;
 }
 
-const MenuItem = ({ icon, path, label, active }: Props) => {
+const MenuItem = ({ icon, path, label, active }: MenuItemProps) => {
 	return (
 		<Link
 			href={path}
