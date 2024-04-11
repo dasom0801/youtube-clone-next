@@ -3,6 +3,7 @@
 import React, {
 	createContext,
 	PropsWithChildren,
+	useCallback,
 	useContext,
 	useState,
 } from 'react';
@@ -20,9 +21,9 @@ const ToggleMenuContext = createContext<ToggleMenuContextValue>({
 type Props = PropsWithChildren<{}>;
 export default function ToggleMenuProvider({ children }: Props) {
 	const [isOpen, toggleMenu] = useState(true);
-	const onToggleMenu = () => {
+	const onToggleMenu = useCallback(() => {
 		toggleMenu((state) => !state);
-	};
+	}, [toggleMenu]);
 
 	return (
 		<ToggleMenuContext.Provider value={{ isOpen, onToggleMenu }}>
@@ -32,5 +33,12 @@ export default function ToggleMenuProvider({ children }: Props) {
 }
 
 export const useToggleMenu = () => {
-	return useContext(ToggleMenuContext);
+	const context = useContext(ToggleMenuContext);
+
+	if (!context) {
+		throw new Error(
+			'useToggleMnu는 ToggleMenuProvider와 함께 사용해야합니다. '
+		);
+	}
+	return context;
 };
