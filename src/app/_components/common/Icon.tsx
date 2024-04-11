@@ -23,6 +23,7 @@ const Icon = ({
 			style={{
 				fontSize,
 				color,
+				maxWidth: fontSize,
 			}}
 		>
 			{icon}
