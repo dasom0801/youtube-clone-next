@@ -16,11 +16,4 @@ export const Default: Story = {
 			{ icon: 'library_music', label: '보관함', path: '/library' },
 		],
 	},
-	decorators: (Story) => {
-		return (
-			<div style={{ width: '240px' }}>
-				<Story />
-			</div>
-		);
-	},
 };
