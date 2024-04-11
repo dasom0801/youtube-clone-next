@@ -45,11 +45,11 @@
 	}
 }
 
-.active {
+.menuItemActive {
 	background-color: var(--active-bg);
 }
 
-.mini {
+.menuItemMini {
 	flex-direction: column;
 	gap: 5px;
 	padding: 12px 0;
