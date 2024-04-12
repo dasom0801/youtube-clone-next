@@ -5,8 +5,10 @@ import React, {
 	PropsWithChildren,
 	useCallback,
 	useContext,
+	useEffect,
 	useState,
 } from 'react';
+import { changeBackgroundColor, changeGuideSideBorder } from './lib/utils';
 
 interface ToggleMenuContextValue {
 	isOpen: boolean;
@@ -24,6 +26,11 @@ export default function ToggleMenuProvider({ children }: Props) {
 	const onToggleMenu = useCallback(() => {
 		toggleMenu((state) => !state);
 	}, [toggleMenu]);
+
+	useEffect(() => {
+		changeBackgroundColor(!isOpen);
+		changeGuideSideBorder(!isOpen);
+	}, [isOpen]);
 
 	return (
 		<ToggleMenuContext.Provider value={{ isOpen, onToggleMenu }}>
