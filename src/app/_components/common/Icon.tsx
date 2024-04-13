@@ -25,6 +25,7 @@ const Icon = ({
 				color,
 				maxWidth: fontSize,
 			}}
+			aria-hidden='true'
 		>
 			{icon}
 		</span>
