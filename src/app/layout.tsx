@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import '@/styles/global.scss';
+import ToggleMenuProvider from './_components/layout/ToggleMenuProvider';
+import GuideWrapper from './_components/layout/GuideWrapper';
+import NavBarWrapper from './_components/layout/NavBarWrapper';
+import styles from './main.module.scss';
 
 const roboto = Roboto({
 	weight: ['400', '500', '700'],
@@ -19,7 +23,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='ko' className={roboto.className}>
-			<body>{children}</body>
+			<body>
+				<ToggleMenuProvider>
+					<NavBarWrapper />
+					<GuideWrapper />
+					<main className={styles.mainContent}>{children}</main>
+				</ToggleMenuProvider>
+			</body>
 		</html>
 	);
 }

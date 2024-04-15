@@ -16,10 +16,5 @@
 
 .guideMenu {
 	padding: 0 8px;
-	width: 240px;
-}
-
-.guideMenuMini {
-	padding: 0 8px;
-	width: 72px;
+	width: var(--guide-width);
 }
