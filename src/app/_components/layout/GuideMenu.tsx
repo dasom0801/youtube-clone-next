@@ -1,8 +1,5 @@
-'use client';
-import clsx from 'clsx';
 import MenuItem, { MenuItemProps } from './MenuItem';
 import styles from './styles/guide.module.scss';
-import { useToggleMenu } from './ToggleMenuProvider';
 
 const menuList: MenuItemProps[] = [
 	{ icon: 'home', label: '홈', path: '/' },
@@ -11,17 +8,11 @@ const menuList: MenuItemProps[] = [
 ];
 
 const GuideMenu = () => {
-	const { isOpen } = useToggleMenu();
 	return (
-		<ul
-			className={clsx({
-				[styles.guideMenu]: isOpen,
-				[styles.guideMenuMini]: !isOpen,
-			})}
-		>
+		<ul className={styles.guideMenu}>
 			{menuList.map((menu) => (
 				<li key={menu.path}>
-					<MenuItem {...menu} mini={!isOpen} />
+					<MenuItem {...menu} />
 				</li>
 			))}
 		</ul>
