@@ -8,7 +8,7 @@ import React, {
 	useEffect,
 	useState,
 } from 'react';
-import { changeBackgroundColor, changeGuideSideBorder } from './lib/utils';
+import { changeGuideMenuStyles } from './lib/utils';
 
 interface ToggleMenuContextValue {
 	isOpen: boolean;
@@ -28,8 +28,7 @@ export default function ToggleMenuProvider({ children }: Props) {
 	}, [toggleMenu]);
 
 	useEffect(() => {
-		changeBackgroundColor(!isOpen);
-		changeGuideSideBorder(!isOpen);
+		changeGuideMenuStyles(isOpen);
 	}, [isOpen]);
 
 	return (
