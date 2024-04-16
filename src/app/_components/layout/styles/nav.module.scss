@@ -7,6 +7,11 @@
 	height: var(--nav-bar-height);
 }
 
+.wrapperScrolled {
+	background-color: var(--background-deep-color);
+	border-bottom: var(--menu-border);
+}
+
 .leftContent {
 	display: flex;
 	align-items: center;
