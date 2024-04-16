@@ -12,7 +12,8 @@ body {
 	--search-width: 860px;
 	--footer-height: 188px;
 
+	--menu-border: 1px solid rgba(255, 255, 255, 0.15);
 	--guide-bg-color: var(--background-deep-color);
-	--guide-side-border: 1px solid rgba(255, 255, 255, 0.15);
+	--guide-side-border: var(--menu-border);
 	--guide-width: 240px;
 }

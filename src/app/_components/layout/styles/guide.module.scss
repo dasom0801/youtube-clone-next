@@ -8,6 +8,11 @@
 	border-right: var(--guide-side-border);
 }
 
+.guideWrapperScrolled {
+	background-color: var(--background-deep-color);
+	border-right: var(--menu-border);
+}
+
 .guideContent {
 	height: calc(100vh - var(--nav-bar-height));
 	padding-top: 8px;
