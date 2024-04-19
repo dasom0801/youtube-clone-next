@@ -4,28 +4,33 @@ import { useEffect, useState } from 'react';
 export const SCROLL_TOP_THRESHOLD = 5;
 
 export const useScrollTopDetector = () => {
-	const [currentScrollY, setCurrentScrollY] = useState(window.scrollY);
+	const hasWindow = typeof window !== 'undefined';
+	const [currentScrollY, setCurrentScrollY] = useState(
+		hasWindow ? window.scrollY : 0
+	);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY <= SCROLL_TOP_THRESHOLD) {
-				if (currentScrollY > SCROLL_TOP_THRESHOLD) {
-					setCurrentScrollY(window.scrollY);
+		if (hasWindow) {
+			const handleScroll = () => {
+				if (window.scrollY <= SCROLL_TOP_THRESHOLD) {
+					if (currentScrollY > SCROLL_TOP_THRESHOLD) {
+						setCurrentScrollY(window.scrollY);
+					}
+				} else {
+					if (currentScrollY <= SCROLL_TOP_THRESHOLD) {
+						setCurrentScrollY(window.scrollY);
+					}
 				}
-			} else {
-				if (currentScrollY <= SCROLL_TOP_THRESHOLD) {
-					setCurrentScrollY(window.scrollY);
-				}
-			}
-		};
+			};
 
-		const debouncedHandleScroll = debounce(handleScroll, 10);
+			const debouncedHandleScroll = debounce(handleScroll, 10);
 
-		window.addEventListener('scroll', debouncedHandleScroll);
-		return () => {
-			window.removeEventListener('scroll', debouncedHandleScroll);
-		};
-	}, [currentScrollY]);
+			window.addEventListener('scroll', debouncedHandleScroll);
+			return () => {
+				window.removeEventListener('scroll', debouncedHandleScroll);
+			};
+		}
+	}, [hasWindow, currentScrollY]);
 
 	return { isScrollTop: currentScrollY <= SCROLL_TOP_THRESHOLD };
 };
