@@ -1,0 +1,19 @@
+body {
+	--background-color: #212121;
+	--background-deep-color: #030303;
+	--text-color: #fff;
+	--primary-color: var(--text-color);
+	--secondary-color: #bcbcbc;
+	--disabled-color: #646464;
+	--divider-color: #3c3c3c;
+	--nav-bar-height: 64px; // 로고
+	--player-bar-height: 72px; // 재생바
+	--header-padding: 32px 0 24px 0;
+	--search-width: 860px;
+	--footer-height: 188px;
+
+	--menu-border: 1px solid rgba(255, 255, 255, 0.15);
+	--guide-bg-color: var(--background-deep-color);
+	--guide-side-border: var(--menu-border);
+	--guide-width: 240px;
+}

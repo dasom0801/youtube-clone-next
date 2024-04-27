@@ -1,0 +1,25 @@
+.guideWrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding-top: var(--nav-bar-height);
+	height: 100%;
+	background-color: var(--guide-bg-color);
+	border-right: var(--guide-side-border);
+}
+
+.guideWrapperScrolled {
+	background-color: var(--background-deep-color);
+	border-right: var(--menu-border);
+}
+
+.guideContent {
+	height: calc(100vh - var(--nav-bar-height));
+	padding-top: 8px;
+	padding-bottom: calc(8px + var(--player-bar-height));
+}
+
+.guideMenu {
+	padding: 0 8px;
+	width: var(--guide-width);
+}
