@@ -1,15 +1,29 @@
 @import '/src/styles/mixin.scss';
 
 .wrapper {
+	--list-item-width: calc(
+		(var(--content-width) - 4 * var(--list-item-margin-right)) / 3
+	);
 	display: flex;
 	align-items: center;
 	gap: 16px;
+	width: 100%;
+	padding: 0 8px;
+	width: var(--list-item-width);
+	--ytmusic-carousel-item-base-width: calc(
+		(var(--content-width) - 5 * var(--list-item-margin-right)) / 6
+	);
+
+	--ytmusic-carousel-multi-row-list-item-width: calc(
+		(var(--content-width) - 4 * var(--list-item-margin-right)) / 3
+	);
 }
 
 .thumbnail {
 	position: relative;
 	width: 48px;
 	height: 48px;
+	flex-shrink: 0;
 	border-radius: 2px;
 	overflow: hidden;
 
@@ -48,7 +62,16 @@
 	}
 }
 
+.textWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	flex: 1;
+}
+
 .title {
+	@include textEllipsis();
+	flex-basis: 100%;
 	margin: 0 0 3px 0;
 	color: #fff;
 	font-size: 14px;
@@ -57,7 +80,21 @@
 }
 
 .info {
+	display: flex;
+	flex: 9 1 0;
+	align-items: center;
+	flex-basis: 1px;
+	overflow: hidden;
+
+	div {
+		@include textEllipsis();
+		display: flex;
+		max-width: max-content;
+	}
+
 	a {
+		@include textEllipsis();
+		display: block;
 		color: rgba(255, 255, 255, 0.7);
 		font-size: 14px;
 		text-decoration: none;
@@ -67,7 +104,7 @@
 .artist,
 .album {
 	&:hover {
-		span {
+		a {
 			text-decoration: underline;
 		}
 	}
@@ -76,6 +113,6 @@
 .album {
 	&::before {
 		content: '•';
-		margin: 0 4px 0 0;
+		margin: 0 4px;
 	}
 }

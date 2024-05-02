@@ -12,17 +12,18 @@ const MusicListItem = ({ id, thumbnail, title, artist, album }: Music) => {
 					<Icon icon='play_arrow' type='fill' />
 				</div>
 			</Link>
-			<div>
+			<div className={styles.textWrapper}>
 				<Link className={styles.title} href={`/watch?v=${id}`}>
 					{title}
 				</Link>
 				<div className={styles.info}>
-					<Link className={styles.artist} href={`/channel/${artist.id}`}>
-						<span>{artist.name}</span>
-					</Link>
-					<Link className={styles.album} href={`/browse/${album.id}`}>
-						<span>{album.title}</span>
-					</Link>
+					<div className={styles.artist}>
+						<Link href={`/channel/${artist.id}`}>{artist.name}</Link>
+					</div>
+
+					<div className={styles.album}>
+						<Link href={`/browse/${album.id}`}>{album.title}</Link>
+					</div>
 				</div>
 			</div>
 		</div>
