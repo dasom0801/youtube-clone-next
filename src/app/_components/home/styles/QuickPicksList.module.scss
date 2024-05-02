@@ -1,0 +1,15 @@
+.list {
+	--items-per-column: 4;
+	--items-per-row: 3;
+	--item-margin-bottom: 16px;
+	--list-item-margin-right: 24px;
+	width: 100%;
+	overflow: hidden;
+	overflow-x: scroll;
+	white-space: nowrap;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-rows: repeat(var(--items-per-column), 1fr);
+	grid-template-columns: repeat(var(--items-per-row), minmax(auto, 1fr));
+	gap: var(--item-margin-bottom) var(--list-item-margin-right);
+}
