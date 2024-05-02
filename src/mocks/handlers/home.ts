@@ -1,8 +1,8 @@
 import { HttpResponse, http } from 'msw';
-import quickPick from '../data/home/quick-picks.json';
+import quickPicks from '../data/home/quick-picks.json';
 
 export const handlers = [
-	http.get(`/api/quick-pick`, () => {
-		return HttpResponse.json(quickPick);
+	http.get(`/api/quick-picks`, () => {
+		return HttpResponse.json(quickPicks);
 	}),
 ];
