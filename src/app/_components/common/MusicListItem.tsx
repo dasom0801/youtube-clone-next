@@ -5,7 +5,7 @@ import styles from './styles/MusicListItem.module.scss';
 
 const MusicListItem = ({ id, thumbnail, title, artist, album }: Music) => {
 	return (
-		<div className={styles.wrapper}>
+		<li className={styles.wrapper}>
 			<Link className={styles.thumbnail} href={`/watch?v=${id}`}>
 				<Image src={thumbnail} alt={title} width={48} height={48} />
 				<div>
@@ -26,7 +26,7 @@ const MusicListItem = ({ id, thumbnail, title, artist, album }: Music) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</li>
 	);
 };
 export default MusicListItem;

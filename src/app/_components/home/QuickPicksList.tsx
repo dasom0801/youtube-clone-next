@@ -15,9 +15,7 @@ const QuickPicksList = ({ list }: Props) => {
 			/>
 			<ul className={styles.list}>
 				{list.map((item) => (
-					<li key={item.id}>
-						<MusicListItem {...item} />
-					</li>
+					<MusicListItem {...item} key={item.id} />
 				))}
 			</ul>
 		</>
