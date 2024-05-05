@@ -1,0 +1,16 @@
+@mixin setPositionCenter($position, $x: true, $y: true) {
+	position: $position;
+	@if $x == true {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	@if $y == true {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	@if $x == true and $y == true {
+		transform: translate(-50%, -50%);
+	}
+}

@@ -1,11 +1,17 @@
+@import 'src/styles/mixin';
+
 .guideWrapper {
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: -1000px;
 	padding-top: var(--nav-bar-height);
 	height: 100%;
 	background-color: var(--guide-bg-color);
 	border-right: var(--guide-side-border);
+
+	@include screenSm() {
+		left: 0;
+	}
 }
 
 .guideWrapperScrolled {

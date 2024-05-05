@@ -1,3 +1,2 @@
-import { http, HttpResponse } from 'msw';
-
-export const handlers = [];
+import { handlers as home } from './home';
+export const handlers = [...home];

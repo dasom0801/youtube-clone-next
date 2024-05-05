@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import { startMockServer } from '@/mocks';
+
 import ToggleMenuProvider from './_components/layout/ToggleMenuProvider';
 import GuideWrapper from './_components/layout/GuideWrapper';
 import NavBarWrapper from './_components/layout/NavBarWrapper';
+import SetupWorker from './_components/common/SetupWorker';
+import TanstackQueryProvider from './_components/common/QueryProvider';
+
 import styles from './main.module.scss';
 import '@/styles/global.scss';
 
@@ -22,14 +25,18 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	startMockServer();
 	return (
 		<html lang='ko' className={roboto.className}>
 			<body>
+				<SetupWorker />
 				<ToggleMenuProvider>
-					<NavBarWrapper />
-					<GuideWrapper />
-					<main className={styles.mainContent}>{children}</main>
+					<TanstackQueryProvider>
+						<NavBarWrapper />
+						<GuideWrapper />
+						<main className={styles.mainContent}>
+							<div className={styles.mainContentWrapper}>{children}</div>
+						</main>
+					</TanstackQueryProvider>
 				</ToggleMenuProvider>
 			</body>
 		</html>

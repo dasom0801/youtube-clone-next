@@ -1,4 +1,15 @@
+@import 'src/styles/mixin';
+
 .mainContent {
 	padding-top: var(--nav-bar-height);
-	margin-left: var(--guide-width);
+	margin-left: 0;
+
+	@include screenSm() {
+		margin-left: var(--guide-width);
+	}
+}
+
+.mainContentWrapper {
+	margin: 0 auto;
+	width: var(--content-width);
 }

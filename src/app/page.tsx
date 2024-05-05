@@ -1,3 +1,9 @@
+import QuickPicksListContainer from './_components/home/QuickPicksListContainer';
+
 export default function Home() {
-	return <main>메인 페이지</main>;
+	return (
+		<div>
+			<QuickPicksListContainer />
+		</div>
+	);
 }

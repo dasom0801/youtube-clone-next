@@ -1,3 +1,5 @@
+@import 'src/styles/mixin';
+
 body {
 	--background-color: #212121;
 	--background-deep-color: #030303;
@@ -16,4 +18,29 @@ body {
 	--guide-bg-color: var(--background-deep-color);
 	--guide-side-border: var(--menu-border);
 	--guide-width: 240px;
+
+	--content-margin: 32px;
+	--content-width: calc(100vw - var(--content-margin));
+}
+
+@include screenSm() {
+	body {
+		--content-margin: 56px;
+		--content-width: min(
+			calc(100vw - var(--content-margin) - var(--guide-width)),
+			1478px
+		);
+	}
+}
+
+@include screenMd() {
+	body {
+		--content-margin: 112px;
+	}
+}
+
+@include screenXl() {
+	body {
+		--content-margin: 200px;
+	}
 }

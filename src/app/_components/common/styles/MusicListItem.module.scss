@@ -1,0 +1,119 @@
+@import '/src/styles/mixin.scss';
+@import '../../home/styles/QuickPicksList.module.scss';
+
+.wrapper {
+	--list-item-width: min(var(--content-width), 420px);
+
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	width: var(--list-item-width);
+
+	@include screenSm() {
+		--list-item-width: 420px;
+	}
+
+	@include screenXl() {
+		--list-item-width: calc(
+			(var(--content-width) - 5 * #{$list-item-margin-right}) / 3
+		);
+	}
+}
+
+.thumbnail {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
+	border-radius: 2px;
+	overflow: hidden;
+
+	div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		opacity: 0;
+	}
+
+	&:hover {
+		div {
+			opacity: 1;
+		}
+	}
+
+	&:focus,
+	&:focus-visible {
+		div {
+			opacity: 1;
+			&::after {
+				content: '';
+				position: absolute;
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+		}
+	}
+}
+
+.textWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	flex: 1;
+}
+
+.title {
+	@include textEllipsis();
+	flex-basis: 100%;
+	margin: 0 0 3px 0;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.info {
+	display: flex;
+	flex: 9 1 0;
+	align-items: center;
+	flex-basis: 1px;
+	overflow: hidden;
+
+	div {
+		@include textEllipsis();
+		display: flex;
+		max-width: max-content;
+	}
+
+	a {
+		@include textEllipsis();
+		display: block;
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 14px;
+		text-decoration: none;
+	}
+}
+
+.artist,
+.album {
+	&:hover {
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+.album {
+	&::before {
+		content: '•';
+		margin: 0 4px;
+	}
+}
