@@ -23,24 +23,24 @@ body {
 	--content-width: calc(100vw - var(--content-margin));
 }
 
-@include screenLg() {
+@include screenSm() {
 	body {
-		--content-margin: 200px;
+		--content-margin: 56px;
+		--content-width: min(
+			calc(100vw - var(--content-margin) - var(--guide-width)),
+			1478px
+		);
+	}
+}
+
+@include screenMd() {
+	body {
+		--content-margin: 112px;
 	}
 }
 
 @include screenXl() {
 	body {
 		--content-margin: 200px;
-	}
-}
-
-@include screenSm() {
-	body {
-		--content-margin: 200px;
-		--content-width: min(
-			calc(100vw - var(--content-margin) - var(--guide-width)),
-			1478px
-		);
 	}
 }

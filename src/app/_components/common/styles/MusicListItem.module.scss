@@ -1,22 +1,23 @@
 @import '/src/styles/mixin.scss';
+@import '../../home/styles/QuickPicksList.module.scss';
 
 .wrapper {
-	--list-item-width: calc(
-		(var(--content-width) - 4 * var(--list-item-margin-right)) / 3
-	);
+	--list-item-width: min(var(--content-width), 420px);
+
 	display: flex;
 	align-items: center;
 	gap: 16px;
-	width: 100%;
-	padding: 0 8px;
 	width: var(--list-item-width);
-	--ytmusic-carousel-item-base-width: calc(
-		(var(--content-width) - 5 * var(--list-item-margin-right)) / 6
-	);
 
-	--ytmusic-carousel-multi-row-list-item-width: calc(
-		(var(--content-width) - 4 * var(--list-item-margin-right)) / 3
-	);
+	@include screenSm() {
+		--list-item-width: 420px;
+	}
+
+	@include screenXl() {
+		--list-item-width: calc(
+			(var(--content-width) - 5 * #{$list-item-margin-right}) / 3
+		);
+	}
 }
 
 .thumbnail {
