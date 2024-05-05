@@ -20,10 +20,7 @@ body {
 	--guide-width: 240px;
 
 	--content-margin: 32px;
-	--content-width: min(
-		calc(100vw - var(--content-margin) - var(--guide-width)),
-		1478px
-	);
+	--content-width: calc(100vw - var(--content-margin));
 }
 
 @include screenLg() {
@@ -35,5 +32,15 @@ body {
 @include screenXl() {
 	body {
 		--content-margin: 200px;
+	}
+}
+
+@include screenSm() {
+	body {
+		--content-margin: 200px;
+		--content-width: min(
+			calc(100vw - var(--content-margin) - var(--guide-width)),
+			1478px
+		);
 	}
 }
