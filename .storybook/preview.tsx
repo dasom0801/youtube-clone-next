@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
+import TanstackQueryProvider from '../src/app/_components/common/QueryProvider';
 import '../src/styles/global.scss';
 
 const preview: Preview = {
@@ -14,7 +15,9 @@ const preview: Preview = {
 	decorators: [
 		(Story) => (
 			<div style={{ backgroundColor: '#212121' }}>
-				<Story />
+				<TanstackQueryProvider>
+					<Story />
+				</TanstackQueryProvider>
 			</div>
 		),
 	],
