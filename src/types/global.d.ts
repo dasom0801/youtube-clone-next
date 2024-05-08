@@ -16,6 +16,13 @@ declare global {
 		id: string;
 		title: string;
 	}
+
+	interface PlaylistSummary {
+		title: string;
+		thumbnail: string;
+		subTitle: string;
+		browseId: string;
+	}
 }
 
 export {};
